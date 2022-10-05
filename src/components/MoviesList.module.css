@@ -1,0 +1,13 @@
+.movieItem {
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: aqua;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.movieItem:hover {
+  background-color: aquamarine;
+  color: azure;
+}
