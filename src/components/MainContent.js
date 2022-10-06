@@ -1,18 +1,12 @@
 import classes from "./MainContent.module.css";
 import headerLogo from "../images/Star_Wars_White_Logo_v2.png";
 import MoviesList from "./MoviesList";
+import Header from "./Header";
 
 const MainContent = (props) => {
   return (
     <section className={classes["section-main"]}>
-      <div className={classes["header"]}>
-        <img src={headerLogo} alt="Star Wars White Logo in Header" />
-
-        <form>
-          <label htmlFor="search"></label>
-          <input type={"text"} name="search" placeholder="Search movie" />
-        </form>
-      </div>
+      <Header />
 
       <div className={classes["main-content"]}>
         <div className={classes["movies"]}>
@@ -21,10 +15,8 @@ const MainContent = (props) => {
             <div className={classes["movies-sort"]}>
               <label htmlFor={classes["sort"]}>Sort by:</label>
               <select name={classes["sort"]} id={"sort"}>
-                <option value={classes["release_date"]}>Release Date</option>
-                <option value={classes["chonologically"]}>
-                  Chronologically
-                </option>
+                <option value={"release_date"}>Release Date</option>
+                <option value={"chronologically"}>Chronologically</option>
               </select>
             </div>
           </header>
