@@ -1,9 +1,9 @@
 import "./App.css";
 
-import logo from "./images/Star_Wars_Logo_2560x1095px.png";
 import headerLogo from "./images/Star_Wars_White_Logo_v2.png";
 import { Fragment } from "react";
 import MoviesList from "./components/MoviesList";
+import LogoIntro from "./components/LogoIntro";
 
 const swMovies = [
   { title: "A New Hope", id: 4 },
@@ -17,10 +17,7 @@ const swMovies = [
 function App() {
   return (
     <Fragment>
-      <section className={"section-logo"}>
-        <img src={logo} alt="Star wars Logo" />
-      </section>
-
+      <LogoIntro />
       <section className={"section-main"}>
         <div className={"header"}>
           <img src={headerLogo} alt="Star Wars White Logo in Header" />
