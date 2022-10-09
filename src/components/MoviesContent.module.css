@@ -34,6 +34,24 @@
   justify-content: space-between;
 }
 
+.movies_list_header {
+  color: #3b1a1a;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.sort_label {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.sort_select {
+  /*color: red;*/
+  outline: none;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
 .movies-list {
   padding: 2rem;
   list-style: none;

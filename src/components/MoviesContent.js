@@ -6,10 +6,16 @@ const MoviesContent = (props) => {
     <div className={classes["movies-content"]}>
       <div className={classes.movies}>
         <header className={classes["movies-header"]}>
-          <h2>Star Wars movies</h2>
+          <h2 className={classes.movies_list_header}>Star Wars movies</h2>
           <div className={classes["movies-sort"]}>
-            <label htmlFor={classes["sort"]}>Sort by:</label>
-            <select name={classes["sort"]} id={"sort"}>
+            <label htmlFor={"sort"} className={classes.sort_label}>
+              Sort by:
+            </label>
+            <select
+              name={classes["sort"]}
+              id={"sort"}
+              className={classes.sort_select}
+            >
               <option value={"release_date"}>Release Date</option>
               <option value={"chronologically"}>Chronologically</option>
             </select>
