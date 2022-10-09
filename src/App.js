@@ -3,6 +3,7 @@ import "./App.css";
 import { Fragment } from "react";
 import LogoIntro from "./components/LogoIntro";
 import MainContent from "./components/MainContent";
+import MoviesContext, { MoviesContextProvider } from "./store/movies-context";
 
 const swMovies = [
   { title: "A New Hope", id: 4 },
@@ -17,8 +18,10 @@ function App() {
   return (
     <Fragment>
       <LogoIntro />
-
-      <MainContent movies={swMovies} />
+      <MoviesContextProvider>
+        <MainContent movies={swMovies} />
+        {/*<MainContent />*/}
+      </MoviesContextProvider>
     </Fragment>
   );
 }

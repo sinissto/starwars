@@ -1,7 +1,13 @@
 import classes from "./MoviesContent.module.css";
 import MoviesList from "./MoviesList";
+import { useContext } from "react";
+import MoviesContext from "../store/movies-context";
 
 const MoviesContent = (props) => {
+  const ctx = useContext(MoviesContext);
+
+  console.log(ctx);
+
   return (
     <div className={classes["movies-content"]}>
       <div className={classes.movies}>
