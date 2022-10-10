@@ -34,7 +34,7 @@ export const MoviesContextProvider = (props) => {
 
       setMovies(transformedMovieData);
 
-      console.log(movies);
+      // console.log(movies);
     } catch (error) {
       setError(error.message);
       console.log(error.message);

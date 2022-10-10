@@ -19,8 +19,8 @@ function App() {
     <Fragment>
       <LogoIntro />
       <MoviesContextProvider>
-        <MainContent movies={swMovies} />
-        {/*<MainContent />*/}
+        {/*<MainContent movies={swMovies} />*/}
+        <MainContent />
       </MoviesContextProvider>
     </Fragment>
   );

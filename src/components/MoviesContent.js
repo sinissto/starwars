@@ -6,7 +6,7 @@ import MoviesContext from "../store/movies-context";
 const MoviesContent = (props) => {
   const ctx = useContext(MoviesContext);
 
-  console.log(ctx);
+  console.log(ctx.swMovies);
 
   return (
     <div className={classes["movies-content"]}>
@@ -28,12 +28,14 @@ const MoviesContent = (props) => {
           </div>
         </header>
         <ul className={classes["movies-list"]}>
-          {props.movies.map((movie) => {
+          {ctx.swMovies.map((movie) => {
             return <MoviesList key={movie.id} movies={movie} />;
           })}
         </ul>
       </div>
-      <div className={classes["movie-description"]}></div>
+      <div className={classes["movie-description"]}>
+        {ctx.swMovies.length !== 0 && ctx.swMovies[0].openingText}
+      </div>
     </div>
   );
 };
