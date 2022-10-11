@@ -6,7 +6,8 @@ const MainContent = (props) => {
   return (
     <section className={classes["section-main"]}>
       <Header />
-      <MoviesContent movies={props.movies} />
+      {/*<MoviesContent movies={props.movies} />*/}
+      <MoviesContent />
     </section>
   );
 };

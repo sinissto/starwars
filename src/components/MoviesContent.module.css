@@ -58,11 +58,12 @@
 }
 
 .movie-description {
+  padding: 1.5rem;
   background-color: antiquewhite;
   width: 70%;
   opacity: 0;
   transform: translateX(100%);
-
+  font-size: 2rem;
   animation: movieDescriptionEnter 0.5s ease-out 3s forwards;
 }
 

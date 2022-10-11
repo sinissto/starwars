@@ -4,12 +4,17 @@ const MoviesContext = React.createContext({
   swMovies: [],
   isLoading: false,
   error: "",
+  selectedMovie: [],
+
+  sortHandler: () => {},
+  selectMovieHandler: () => {},
 });
 
 export const MoviesContextProvider = (props) => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState([]);
 
   const fetchMoviesHandler = useCallback(async () => {
     try {
@@ -47,9 +52,55 @@ export const MoviesContextProvider = (props) => {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
+  const sortHandler = (e) => {
+    // console.log(e.target.value);
+    if (e.target.value === "release_date") {
+      const sortedSwMovies = movies.sort((a, b) => {
+        const aa = a.releaseDate.split("-").join();
+        const bb = b.releaseDate.split("-").join();
+
+        return aa < bb ? -1 : aa > bb ? 1 : 0;
+      });
+
+      // setMovies(sortedSwMovies);
+      setMovies((prevState) => {
+        return [...prevState];
+      });
+      setSelectedMovie([]);
+      // console.log(movies);
+    }
+    if (e.target.value === "chronologically") {
+      const sortedSwMovies = movies.sort((a, b) => a.id - b.id);
+
+      // setMovies(sortedSwMovies);
+      setMovies((prevState) => {
+        return [...prevState];
+      });
+      setSelectedMovie([]);
+      // console.log(movies);
+    }
+  };
+
+  const selectMovieHandler = (e) => {
+    // console.log(e.target.value);
+    const id = e.target.value;
+    const selectedMovie = movies.find((movie) => movie.id === id);
+    // console.log(id);
+    // console.log(selectedMovie);
+
+    setSelectedMovie(selectedMovie);
+  };
+
   return (
     <MoviesContext.Provider
-      value={{ swMovies: movies, isLoading: isLoading, error: error }}
+      value={{
+        swMovies: movies,
+        isLoading: isLoading,
+        error: error,
+        selectedMovie: selectedMovie,
+        sortHandler,
+        selectMovieHandler,
+      }}
     >
       {props.children}
     </MoviesContext.Provider>

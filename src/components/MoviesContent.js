@@ -6,7 +6,9 @@ import MoviesContext from "../store/movies-context";
 const MoviesContent = (props) => {
   const ctx = useContext(MoviesContext);
 
-  console.log(ctx.swMovies);
+  // console.log(ctx.isLoading);
+  // console.log(ctx.swMovies);
+  // console.log(ctx.selectedMovie);
 
   return (
     <div className={classes["movies-content"]}>
@@ -21,20 +23,32 @@ const MoviesContent = (props) => {
               name={classes["sort"]}
               id={"sort"}
               className={classes.sort_select}
+              onChange={ctx.sortHandler}
             >
               <option value={"release_date"}>Release Date</option>
               <option value={"chronologically"}>Chronologically</option>
             </select>
           </div>
         </header>
-        <ul className={classes["movies-list"]}>
-          {ctx.swMovies.map((movie) => {
-            return <MoviesList key={movie.id} movies={movie} />;
-          })}
-        </ul>
+        {!ctx.isLoading && (
+          <ul className={classes["movies-list"]}>
+            {ctx.swMovies.map((movie) => {
+              return (
+                <MoviesList
+                  key={movie.id}
+                  movies={movie}
+                  onClick={ctx.selectMovieHandler}
+                  value={movie.id}
+                />
+              );
+            })}
+          </ul>
+        )}
+
+        {ctx.isLoading && <p>LOADING...</p>}
       </div>
       <div className={classes["movie-description"]}>
-        {ctx.swMovies.length !== 0 && ctx.swMovies[0].openingText}
+        {ctx.swMovies.length !== 0 && ctx.selectedMovie?.openingText}
       </div>
     </div>
   );
