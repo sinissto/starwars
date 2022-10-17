@@ -1,0 +1,45 @@
+.movie-description {
+  padding: 1.5rem;
+  /*background-color: antiquewhite;*/
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 70%;
+  opacity: 0;
+  transform: translateX(100%);
+  font-size: 2rem;
+  animation: movieDescriptionEnter 0.5s ease-out 3s forwards;
+  perspective: 400px;
+  perspective-origin: bottom;
+  overflow: hidden;
+}
+
+@keyframes movieDescriptionEnter {
+  0% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.screen_crawl {
+  color: #face1d;
+  text-align: justify;
+  /*background-color: aquamarine;*/
+  line-height: 1.5;
+  font-size: 200%;
+  padding: 2rem;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  transform: rotateX(35deg) scale(0.9, 0.7) translateY(60%);
+}

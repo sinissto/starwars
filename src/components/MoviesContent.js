@@ -2,6 +2,7 @@ import classes from "./MoviesContent.module.css";
 import MoviesList from "./MoviesList";
 import { useContext } from "react";
 import MoviesContext from "../store/movies-context";
+import MovieOpeningCrawl from "./MovieOpeningCrawl";
 
 const MoviesContent = (props) => {
   const ctx = useContext(MoviesContext);
@@ -45,11 +46,10 @@ const MoviesContent = (props) => {
           </ul>
         )}
 
-        {ctx.isLoading && <p>LOADING...</p>}
+        {ctx.isLoading && <p className={classes["movies-list"]}>LOADING...</p>}
       </div>
-      <div className={classes["movie-description"]}>
-        {ctx.swMovies.length !== 0 && ctx.selectedMovie?.openingText}
-      </div>
+
+      <MovieOpeningCrawl />
     </div>
   );
 };

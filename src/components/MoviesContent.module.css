@@ -56,27 +56,3 @@
   padding: 2rem;
   list-style: none;
 }
-
-.movie-description {
-  padding: 1.5rem;
-  background-color: antiquewhite;
-  width: 70%;
-  opacity: 0;
-  transform: translateX(100%);
-  font-size: 2rem;
-  animation: movieDescriptionEnter 0.5s ease-out 3s forwards;
-}
-
-@keyframes movieDescriptionEnter {
-  0% {
-    opacity: 0;
-    transform: translate(100%);
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
