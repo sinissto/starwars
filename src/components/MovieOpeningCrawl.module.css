@@ -15,8 +15,16 @@
 }
 
 .movie-opening_crawl::after {
-  position: absolute;
+  content: "";
+  position: fixed;
   top: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 1) 40%,
+    rgba(20, 20, 20, 0) 100%
+  );
 }
 
 @keyframes movieDescriptionEnter {
@@ -48,10 +56,10 @@
   left: 0;
   right: 0;
 
-  animation: openingCrawl 30s infinite;
+  animation: openingCrawl 30s linear infinite;
 
   /*transform: rotateX(30deg) scale(0.9, 0.7) translateY(-100%);*/
-  transform: rotateX(30deg) translate3d(0, 90rem, 0);
+  transform: rotateX(30deg) translate3d(0, 45rem, 0);
   opacity: 1;
 }
 
@@ -63,14 +71,14 @@
 @keyframes openingCrawl {
   0% {
     /*transform: rotateX(30deg) scale(0.9, 0.7) translateY(-100%);*/
-    transform: rotateX(30deg) translate3d(0, 90rem, 0);
+    transform: rotateX(30deg) translate3d(0, 45rem, 0);
     opacity: 1;
   }
   85% {
     opacity: 1;
   }
   100% {
-    transform: rotateX(30deg) translate3d(0, -250rem, 0);
+    transform: rotateX(30deg) translate3d(0, -190rem, 0);
     opacity: 0;
   }
 }
