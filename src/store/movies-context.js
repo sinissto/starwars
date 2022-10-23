@@ -90,13 +90,21 @@ export const MoviesContextProvider = (props) => {
 
   const selectMovieHandler = (e) => {
     // console.log(e.target.value);
-    const id = e.target.value;
-    const selectedMovie = movies.find((movie) => movie.id === id);
-    // console.log(id);
-    console.log(selectedMovie);
 
-    setSelectedMovie(selectedMovie);
-    setPlayOpeningCrawl(true);
+    setPlayOpeningCrawl(false);
+    setSelectedMovie((prevState) => {
+      return [];
+    });
+
+    setTimeout(() => {
+      const id = e.target.value;
+      const selectedMovie = movies.find((movie) => movie.id === id);
+      // console.log(id);
+      console.log(selectedMovie);
+
+      setSelectedMovie(selectedMovie);
+      setPlayOpeningCrawl(true);
+    }, 500);
   };
 
   return (
@@ -107,7 +115,7 @@ export const MoviesContextProvider = (props) => {
         error: error,
         selectedMovie: selectedMovie,
         playOpeningCrawl: playOpeningCrawl,
-        stopPlayingCrawl: stopPlayingCrawl,
+        stopPlayingCrawl,
         sortHandler,
         selectMovieHandler,
       }}

@@ -35,9 +35,9 @@ const MovieOpeningCrawl = () => {
                 </p>
               </div>
             );
-          } else {
-            state = "exited";
-            ctx.playOpeningCrawl = false;
+          }
+          if (state === "exit" || state === "exiting") {
+            return null;
           }
         }}
       </Transition>
