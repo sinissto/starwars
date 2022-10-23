@@ -49,7 +49,7 @@ const MoviesContent = (props) => {
         {ctx.isLoading && <p className={classes["movies-list"]}>LOADING...</p>}
       </div>
 
-      <MovieOpeningCrawl />
+      {!ctx.isLoading && <MovieOpeningCrawl />}
     </div>
   );
 };

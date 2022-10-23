@@ -5,9 +5,11 @@ const MoviesContext = React.createContext({
   isLoading: false,
   error: "",
   selectedMovie: [],
+  playOpeningCrawl: false,
 
   sortHandler: () => {},
   selectMovieHandler: () => {},
+  stopPlayingCrawl: () => {},
 });
 
 export const MoviesContextProvider = (props) => {
@@ -15,6 +17,7 @@ export const MoviesContextProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState([]);
+  const [playOpeningCrawl, setPlayOpeningCrawl] = useState(false);
 
   const fetchMoviesHandler = useCallback(async () => {
     try {
@@ -81,14 +84,19 @@ export const MoviesContextProvider = (props) => {
     }
   };
 
+  const stopPlayingCrawl = () => {
+    setPlayOpeningCrawl(false);
+  };
+
   const selectMovieHandler = (e) => {
     // console.log(e.target.value);
     const id = e.target.value;
     const selectedMovie = movies.find((movie) => movie.id === id);
     // console.log(id);
-    // console.log(selectedMovie);
+    console.log(selectedMovie);
 
     setSelectedMovie(selectedMovie);
+    setPlayOpeningCrawl(true);
   };
 
   return (
@@ -98,6 +106,8 @@ export const MoviesContextProvider = (props) => {
         isLoading: isLoading,
         error: error,
         selectedMovie: selectedMovie,
+        playOpeningCrawl: playOpeningCrawl,
+        stopPlayingCrawl: stopPlayingCrawl,
         sortHandler,
         selectMovieHandler,
       }}
