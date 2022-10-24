@@ -1,3 +1,22 @@
+# What to learn
+
+- [x] Basic JS, CSS, HTML
+- [ ] Functional vs class components
+- [ ] React Composition vs Inheritance
+- [ ] Loading data from external API
+- [ ] Storing data to local file
+- [ ] Loading data from local file
+- [ ] Repository design pattern
+- [ ] Context API
+- [ ] Redux
+- [ ] Context API vs Redux
+- [ ] KISS, YAGNI, SOLID...etc
+- [ ] Different types of testing 
+- [ ] Unit testing
+- [ ] Selenium testing
+- [ ] 
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +87,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

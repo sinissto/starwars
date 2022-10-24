@@ -2,7 +2,7 @@ import classes from "./MovieOpeningCrawl.module.css";
 import { useContext, useRef } from "react";
 import MoviesContext from "../store/movies-context";
 import { Transition } from "react-transition-group";
-
+//todo sve ovo sto konzumiras iz Context treba da dodje kroz props. Na primer:
 const MovieOpeningCrawl = () => {
   const ctx = useContext(MoviesContext);
 

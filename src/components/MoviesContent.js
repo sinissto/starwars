@@ -31,7 +31,7 @@ const MoviesContent = (props) => {
             </select>
           </div>
         </header>
-        {!ctx.isLoading && (
+        {!ctx.isLoading && (//todo isLoading je interna stvar komponente. Nema razloga da bude u Context
           <ul className={classes["movies-list"]}>
             {ctx.swMovies.map((movie) => {
               return (

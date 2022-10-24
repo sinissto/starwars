@@ -20,10 +20,10 @@ export const MoviesContextProvider = (props) => {
   const [playOpeningCrawl, setPlayOpeningCrawl] = useState(false);
 
   const fetchMoviesHandler = useCallback(async () => {
-    try {
+    try {//todo Da li ovde ima smisla da se koristi try/catch?
       setIsLoading(true);
       setError(null);
-
+  //todo Nisam siguran da bi trebalo ovde da se radi fetch. ReactContext je mehanizam za propagiranje podataka kroz komponente a da se ne radi props drilling.
       const response = await fetch("https://swapi.dev/api/films/");
       const data = await response.json();
 
